@@ -1,3 +1,3 @@
 export default function randomNumber(min, max) {
-return 1;
+    return Math.random() * (max - min) + min;
 }
