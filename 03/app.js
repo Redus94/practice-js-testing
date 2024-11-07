@@ -7,7 +7,7 @@ export default function randomNumber(min, max) {
     throwError("max is not a number");
   }
 
-  if (Math.sign(max - min) === -1) {
+  if (minIsGreater(min, max)) {
     throwError("max is greater than min");
   }
 
@@ -20,4 +20,8 @@ const throwError = (error) => {
 
 const isNumber = (value) => {
   return typeof value === "number" && !Number.isNaN(value);
+};
+
+const minIsGreater = (min, max) => {
+  return Math.sign(max - min) === -1;
 };
